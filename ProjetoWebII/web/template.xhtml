@@ -16,14 +16,16 @@
         <p:growl id="growl" life="3000" />
 
         <p:layout fullPage="true">
-            <p:layoutUnit position="north" size="65" header="#{bundle.AppName}">
+            <p:layoutUnit position="north" size="65" header="Sistema Financeiro">
                 <h:form id="menuForm">
                     <p:menubar>
                         <p:menuitem value="#{bundle.Home}" outcome="/index" icon="ui-icon-home"/>
-                        <p:submenu label="#{bundle.Maintenance}">
-                            <p:menuitem value="Banco" outcome="/banco/List.xhtml" />
-                            <p:menuitem value="LocalMove" outcome="/localMove/List.xhtml" />
-                            <p:menuitem value="MoveBanco" outcome="/moveBanco/List.xhtml" />
+                        <p:submenu label="Manutenção">
+                            <p:menuitem value="Cadastro de Banco" outcome="/banco/List.xhtml" />
+                            <p:menuitem value="Cadastro Local de Custo" outcome="/localMove/List.xhtml" />
+                        </p:submenu>
+                        <p:submenu label="Movimentação">
+                            <p:menuitem value="Lançamentos" outcome="/moveBanco/List.xhtml" />
                         </p:submenu>
                     </p:menubar>
                 </h:form>
