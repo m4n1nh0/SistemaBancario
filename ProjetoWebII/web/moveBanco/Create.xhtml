@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+    <ui:composition>
+
+        <p:dialog id="MoveBancoCreateDlg" widgetVar="MoveBancoCreateDialog" modal="true" resizable="false" appendTo="@(body)" header="#{bundle.CreateMoveBancoTitle}">
+            <h:form id="MoveBancoCreateForm">
+                <h:panelGroup id="display">
+                    <p:panelGrid columns="2" rendered="#{moveBancoController.selected != null}">
+                        <p:outputLabel value="#{bundle.CreateMoveBancoLabel_moveBancoPK_fkCodBanco}" for="moveBancoPK_fkCodBanco" />
+                        <p:inputText id="moveBancoPK_fkCodBanco" value="#{moveBancoController.selected.moveBancoPK.fkCodBanco}" title="#{bundle.CreateMoveBancoTitle_moveBancoPK_fkCodBanco}" required="true" requiredMessage="#{bundle.CreateMoveBancoRequiredMessage_moveBancoPK_fkCodBanco}"/>
+                        <p:outputLabel value="#{bundle.CreateMoveBancoLabel_moveBancoPK_codSeqMove}" for="moveBancoPK_codSeqMove" />
+                        <p:inputText id="moveBancoPK_codSeqMove" value="#{moveBancoController.selected.moveBancoPK.codSeqMove}" title="#{bundle.CreateMoveBancoTitle_moveBancoPK_codSeqMove}" required="true" requiredMessage="#{bundle.CreateMoveBancoRequiredMessage_moveBancoPK_codSeqMove}"/>
+                        <p:outputLabel value="#{bundle.CreateMoveBancoLabel_moveBancoPK_dtDataEntrada}" for="moveBancoPK_dtDataEntrada" />
+                        <p:calendar id="moveBancoPK_dtDataEntrada" pattern="MM/dd/yyyy" value="#{moveBancoController.selected.moveBancoPK.dtDataEntrada}" title="#{bundle.EditMoveBancoTitle_moveBancoPK_dtDataEntrada}" required="true" requiredMessage="#{bundle.EditMoveBancoRequiredMessage_moveBancoPK_dtDataEntrada}" showOn="button"/>
+                        <p:outputLabel value="#{bundle.CreateMoveBancoLabel_flagDebCred}" for="flagDebCred" />
+                        <p:inputText id="flagDebCred" value="#{moveBancoController.selected.flagDebCred}" title="#{bundle.CreateMoveBancoTitle_flagDebCred}" required="true" requiredMessage="#{bundle.CreateMoveBancoRequiredMessage_flagDebCred}"/>
+                        <p:outputLabel value="#{bundle.CreateMoveBancoLabel_fkCodLocal}" for="fkCodLocal" />
+                        <p:inputText id="fkCodLocal" value="#{moveBancoController.selected.fkCodLocal}" title="#{bundle.CreateMoveBancoTitle_fkCodLocal}" />
+                        <p:outputLabel value="#{bundle.CreateMoveBancoLabel_dscHistorico}" for="dscHistorico" />
+                        <p:inputText id="dscHistorico" value="#{moveBancoController.selected.dscHistorico}" title="#{bundle.CreateMoveBancoTitle_dscHistorico}" required="true" requiredMessage="#{bundle.CreateMoveBancoRequiredMessage_dscHistorico}"/>
+                        <p:outputLabel value="#{bundle.CreateMoveBancoLabel_vlTransacao}" for="vlTransacao" />
+                        <p:inputText id="vlTransacao" value="#{moveBancoController.selected.vlTransacao}" title="#{bundle.CreateMoveBancoTitle_vlTransacao}" required="true" requiredMessage="#{bundle.CreateMoveBancoRequiredMessage_vlTransacao}"/>
+                        <p:outputLabel value="#{bundle.CreateMoveBancoLabel_fkDscNomeUsu}" for="fkDscNomeUsu" />
+                        <p:inputText id="fkDscNomeUsu" value="#{moveBancoController.selected.fkDscNomeUsu}" title="#{bundle.CreateMoveBancoTitle_fkDscNomeUsu}" required="true" requiredMessage="#{bundle.CreateMoveBancoRequiredMessage_fkDscNomeUsu}"/>
+                    </p:panelGrid>
+                    <p:commandButton actionListener="#{moveBancoController.create}" value="#{bundle.Save}" update="display,:MoveBancoListForm:datalist,:growl" oncomplete="handleSubmit(args,'MoveBancoCreateDialog');"/>
+                    <p:commandButton value="#{bundle.Cancel}" onclick="MoveBancoCreateDialog.hide()"/>
+                </h:panelGroup>
+            </h:form>
+        </p:dialog>
+
+    </ui:composition>
+</html>

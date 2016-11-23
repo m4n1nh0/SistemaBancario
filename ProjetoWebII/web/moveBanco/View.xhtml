@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+    <ui:composition>
+
+        <p:dialog id="MoveBancoViewDlg" widgetVar="MoveBancoViewDialog" modal="true" resizable="false" appendTo="@(body)" header="#{bundle.ViewMoveBancoTitle}">
+            <h:form id="MoveBancoViewForm">
+                <h:panelGroup id="display">
+                    <p:panelGrid columns="2" rendered="#{moveBancoController.selected != null}">
+                        <h:outputText value="#{bundle.ViewMoveBancoLabel_moveBancoPK_fkCodBanco}"/>
+                        <h:outputText value="#{moveBancoController.selected.moveBancoPK.fkCodBanco}" title="#{bundle.ViewMoveBancoTitle_moveBancoPK_fkCodBanco}"/>
+                        <h:outputText value="#{bundle.ViewMoveBancoLabel_moveBancoPK_codSeqMove}"/>
+                        <h:outputText value="#{moveBancoController.selected.moveBancoPK.codSeqMove}" title="#{bundle.ViewMoveBancoTitle_moveBancoPK_codSeqMove}"/>
+                        <h:outputText value="#{bundle.ViewMoveBancoLabel_moveBancoPK_dtDataEntrada}"/>
+                        <h:outputText value="#{moveBancoController.selected.moveBancoPK.dtDataEntrada}" title="#{bundle.ViewMoveBancoTitle_moveBancoPK_dtDataEntrada}">
+                            <f:convertDateTime pattern="MM/dd/yyyy" />
+                        </h:outputText>
+                        <h:outputText value="#{bundle.ViewMoveBancoLabel_flagDebCred}"/>
+                        <h:outputText value="#{moveBancoController.selected.flagDebCred}" title="#{bundle.ViewMoveBancoTitle_flagDebCred}"/>
+                        <h:outputText value="#{bundle.ViewMoveBancoLabel_fkCodLocal}"/>
+                        <h:outputText value="#{moveBancoController.selected.fkCodLocal}" title="#{bundle.ViewMoveBancoTitle_fkCodLocal}"/>
+                        <h:outputText value="#{bundle.ViewMoveBancoLabel_dscHistorico}"/>
+                        <h:outputText value="#{moveBancoController.selected.dscHistorico}" title="#{bundle.ViewMoveBancoTitle_dscHistorico}"/>
+                        <h:outputText value="#{bundle.ViewMoveBancoLabel_vlTransacao}"/>
+                        <h:outputText value="#{moveBancoController.selected.vlTransacao}" title="#{bundle.ViewMoveBancoTitle_vlTransacao}"/>
+                        <h:outputText value="#{bundle.ViewMoveBancoLabel_fkDscNomeUsu}"/>
+                        <h:outputText value="#{moveBancoController.selected.fkDscNomeUsu}" title="#{bundle.ViewMoveBancoTitle_fkDscNomeUsu}"/>
+                    </p:panelGrid>
+                    <p:commandButton value="#{bundle.Close}" onclick="MoveBancoViewDialog.hide()"/>
+                </h:panelGroup>
+            </h:form>
+        </p:dialog>
+
+    </ui:composition>
+</html>

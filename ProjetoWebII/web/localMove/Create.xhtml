@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+    <ui:composition>
+
+        <p:dialog id="LocalMoveCreateDlg" widgetVar="LocalMoveCreateDialog" modal="true" resizable="false" appendTo="@(body)" header="#{bundle.CreateLocalMoveTitle}">
+            <h:form id="LocalMoveCreateForm">
+                <h:panelGroup id="display">
+                    <p:panelGrid columns="2" rendered="#{localMoveController.selected != null}">
+                        <p:outputLabel value="#{bundle.CreateLocalMoveLabel_codLocal}" for="codLocal" />
+                        <p:inputText id="codLocal" value="#{localMoveController.selected.codLocal}" title="#{bundle.CreateLocalMoveTitle_codLocal}" required="true" requiredMessage="#{bundle.CreateLocalMoveRequiredMessage_codLocal}"/>
+                        <p:outputLabel value="#{bundle.CreateLocalMoveLabel_dscLocal}" for="dscLocal" />
+                        <p:inputText id="dscLocal" value="#{localMoveController.selected.dscLocal}" title="#{bundle.CreateLocalMoveTitle_dscLocal}" required="true" requiredMessage="#{bundle.CreateLocalMoveRequiredMessage_dscLocal}"/>
+                    </p:panelGrid>
+                    <p:commandButton actionListener="#{localMoveController.create}" value="#{bundle.Save}" update="display,:LocalMoveListForm:datalist,:growl" oncomplete="handleSubmit(args,'LocalMoveCreateDialog');"/>
+                    <p:commandButton value="#{bundle.Cancel}" onclick="LocalMoveCreateDialog.hide()"/>
+                </h:panelGroup>
+            </h:form>
+        </p:dialog>
+
+    </ui:composition>
+</html>
