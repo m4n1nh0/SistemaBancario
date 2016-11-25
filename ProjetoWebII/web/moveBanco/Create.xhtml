@@ -14,10 +14,10 @@
                     <p:panelGrid columns="2" rendered="#{moveBancoController.selected != null}">
                         <p:outputLabel value="#{bundle.CreateMoveBancoLabel_moveBancoPK_fkCodBanco}" for="moveBancoPK_fkCodBanco" />
                         <p:inputText id="moveBancoPK_fkCodBanco" value="#{moveBancoController.selected.moveBancoPK.fkCodBanco}" title="#{bundle.CreateMoveBancoTitle_moveBancoPK_fkCodBanco}" required="true" requiredMessage="#{bundle.CreateMoveBancoRequiredMessage_moveBancoPK_fkCodBanco}"/>
+                        <p:outputLabel value="#{bundle.CreateMoveBancoLabel_moveBancoPK_dtDataEntrada}" for="moveBancoPK_dtDataEntrada" />
+                        <p:calendar id="moveBancoPK_dtDataEntrada" pattern="dd/MM/yyyy" value="#{moveBancoController.selected.moveBancoPK.dtDataEntrada}" title="#{bundle.EditMoveBancoTitle_moveBancoPK_dtDataEntrada}" required="true" requiredMessage="#{bundle.EditMoveBancoRequiredMessage_moveBancoPK_dtDataEntrada}" showOn="button"/>
                         <p:outputLabel value="#{bundle.CreateMoveBancoLabel_moveBancoPK_codSeqMove}" for="moveBancoPK_codSeqMove" />
                         <p:inputText id="moveBancoPK_codSeqMove" value="#{moveBancoController.selected.moveBancoPK.codSeqMove}" title="#{bundle.CreateMoveBancoTitle_moveBancoPK_codSeqMove}" required="true" requiredMessage="#{bundle.CreateMoveBancoRequiredMessage_moveBancoPK_codSeqMove}"/>
-                        <p:outputLabel value="#{bundle.CreateMoveBancoLabel_moveBancoPK_dtDataEntrada}" for="moveBancoPK_dtDataEntrada" />
-                        <p:calendar id="moveBancoPK_dtDataEntrada" pattern="MM/dd/yyyy" value="#{moveBancoController.selected.moveBancoPK.dtDataEntrada}" title="#{bundle.EditMoveBancoTitle_moveBancoPK_dtDataEntrada}" required="true" requiredMessage="#{bundle.EditMoveBancoRequiredMessage_moveBancoPK_dtDataEntrada}" showOn="button"/>
                         <p:outputLabel value="#{bundle.CreateMoveBancoLabel_flagDebCred}" for="flagDebCred" />
                         <p:inputText id="flagDebCred" value="#{moveBancoController.selected.flagDebCred}" title="#{bundle.CreateMoveBancoTitle_flagDebCred}" required="true" requiredMessage="#{bundle.CreateMoveBancoRequiredMessage_flagDebCred}"/>
                         <p:outputLabel value="#{bundle.CreateMoveBancoLabel_fkCodLocal}" for="fkCodLocal" />

@@ -13,7 +13,7 @@
                 <h:panelGroup id="display">
                     <p:panelGrid columns="2" rendered="#{localMoveController.selected != null}">
                         <p:outputLabel value="#{bundle.EditLocalMoveLabel_codLocal}" for="codLocal" />
-                        <p:inputText id="codLocal" value="#{localMoveController.selected.codLocal}" title="#{bundle.EditLocalMoveTitle_codLocal}" required="true" requiredMessage="#{bundle.EditLocalMoveRequiredMessage_codLocal}"/>
+                        <p:inputText id="codLocal" readonly="true" value="#{localMoveController.selected.codLocal}" title="#{bundle.EditLocalMoveTitle_codLocal}" required="true" requiredMessage="#{bundle.EditLocalMoveRequiredMessage_codLocal}"/>
                         <p:outputLabel value="#{bundle.EditLocalMoveLabel_dscLocal}" for="dscLocal" />
                         <p:inputText id="dscLocal" value="#{localMoveController.selected.dscLocal}" title="#{bundle.EditLocalMoveTitle_dscLocal}" required="true" requiredMessage="#{bundle.EditLocalMoveRequiredMessage_dscLocal}"/>
                     </p:panelGrid>
